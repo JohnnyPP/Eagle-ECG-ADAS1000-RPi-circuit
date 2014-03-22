@@ -1924,6 +1924,40 @@ chip</description>
 </package>
 </packages>
 </library>
+<library name="v-reg-micrel">
+<description>&lt;b&gt;Micrel Voltage Regulator&lt;/b&gt;&lt;p&gt;
+Micrel Semiconductor, Inc.&lt;br&gt;
+http://www.micrel.com&lt;p&gt;
+&lt;author&gt;Created by librarian@cadsoft.de&lt;/author&gt;</description>
+<packages>
+<package name="SOT23-5">
+<description>&lt;b&gt;Small Outline Transistor&lt;/b&gt;</description>
+<wire x1="1.4224" y1="0.8104" x2="1.4224" y2="-0.8104" width="0.1524" layer="21"/>
+<wire x1="1.4224" y1="-0.8104" x2="-1.4224" y2="-0.8104" width="0.1524" layer="51"/>
+<wire x1="-1.4224" y1="-0.8104" x2="-1.4224" y2="0.8104" width="0.1524" layer="21"/>
+<wire x1="-1.4224" y1="0.8104" x2="1.4224" y2="0.8104" width="0.1524" layer="51"/>
+<wire x1="-0.5224" y1="0.8104" x2="0.5224" y2="0.8104" width="0.1524" layer="21"/>
+<wire x1="-0.4276" y1="-0.8104" x2="-0.5224" y2="-0.8104" width="0.1524" layer="21"/>
+<wire x1="0.5224" y1="-0.8104" x2="0.4276" y2="-0.8104" width="0.1524" layer="21"/>
+<wire x1="-1.3276" y1="-0.8104" x2="-1.4224" y2="-0.8104" width="0.1524" layer="21"/>
+<wire x1="1.4224" y1="-0.8104" x2="1.3276" y2="-0.8104" width="0.1524" layer="21"/>
+<wire x1="1.3276" y1="0.8104" x2="1.4224" y2="0.8104" width="0.1524" layer="21"/>
+<wire x1="-1.4224" y1="0.8104" x2="-1.3276" y2="0.8104" width="0.1524" layer="21"/>
+<smd name="1" x="-0.95" y="-1.3001" dx="0.55" dy="1.2" layer="1"/>
+<smd name="2" x="0" y="-1.3001" dx="0.55" dy="1.2" layer="1"/>
+<smd name="3" x="0.95" y="-1.3001" dx="0.55" dy="1.2" layer="1"/>
+<smd name="4" x="0.95" y="1.3001" dx="0.55" dy="1.2" layer="1"/>
+<smd name="5" x="-0.95" y="1.3001" dx="0.55" dy="1.2" layer="1"/>
+<text x="-1.905" y="1.905" size="1.27" layer="25">&gt;NAME</text>
+<text x="-1.905" y="-3.175" size="1.27" layer="27">&gt;VALUE</text>
+<rectangle x1="-1.2" y1="-1.5" x2="-0.7" y2="-0.85" layer="51"/>
+<rectangle x1="-0.25" y1="-1.5" x2="0.25" y2="-0.85" layer="51"/>
+<rectangle x1="0.7" y1="-1.5" x2="1.2" y2="-0.85" layer="51"/>
+<rectangle x1="0.7" y1="0.85" x2="1.2" y2="1.5" layer="51"/>
+<rectangle x1="-1.2" y1="0.85" x2="-0.7" y2="1.5" layer="51"/>
+</package>
+</packages>
+</library>
 </libraries>
 <attributes>
 </attributes>
@@ -2107,7 +2141,7 @@ einem neuen Namen ab.</description>
 <attribute name="SPICEMODEL" value="NONE" x="35.56" y="80.772" size="1.778" layer="27" rot="R180" display="off"/>
 <attribute name="SPICEPREFIX" value="C" x="35.56" y="80.772" size="1.778" layer="27" rot="R180" display="off"/>
 </element>
-<element name="C2" library="resistor" package="153CLV-0405" value="" x="41.402" y="79.248" rot="R90"/>
+<element name="C2" library="resistor" package="153CLV-0405" value="10uF" x="41.402" y="79.248" rot="R90"/>
 <element name="R1" library="resistor" package="R0603" value="1k" x="35.56" y="70.612"/>
 <element name="R2" library="resistor" package="R0603" value="1k" x="39.624" y="71.882" rot="R270"/>
 <element name="R3" library="resistor" package="R0603" value="1k" x="38.862" y="68.072"/>
@@ -2129,6 +2163,18 @@ einem neuen Namen ab.</description>
 <attribute name="SPICEPREFIX" value="D" x="32.004" y="80.264" size="1.778" layer="27" rot="R90" display="off"/>
 </element>
 <element name="R5" library="resistor" package="R0603" value="1k" x="32.004" y="75.946" rot="R90"/>
+<element name="C4" library="resistor" package="153CLV-0405" value="10uF" x="-6.35" y="-2.54"/>
+<element name="IC1" library="v-reg-micrel" package="SOT23-5" value="ADP151" x="-7.112" y="-10.668">
+<attribute name="OC_NEWARK" value="09J8939" x="-7.112" y="-10.668" size="1.778" layer="27" display="off"/>
+<attribute name="MPN" value="MIC5219BM5 TR" x="-7.112" y="-10.668" size="1.778" layer="27" display="off"/>
+<attribute name="MF" value="ALTERA CORPORATION" x="-7.112" y="-10.668" size="1.778" layer="27" display="off"/>
+<attribute name="OC_FARNELL" value="1100656" x="-7.112" y="-10.668" size="1.778" layer="27" display="off"/>
+</element>
+<element name="C5" library="resistor" package="153CLV-0405" value="10uF" x="-14.986" y="-9.906"/>
+<element name="C6" library="eagle-ltspice" package="C0603" value="100n" x="-16.51" y="-16.764">
+<attribute name="SPICEMODEL" value="NONE" x="-16.51" y="-16.764" size="1.778" layer="27" display="off"/>
+<attribute name="SPICEPREFIX" value="C" x="-16.51" y="-16.764" size="1.778" layer="27" display="off"/>
+</element>
 </elements>
 <signals>
 <signal name="AVDD_2">
@@ -2182,6 +2228,11 @@ einem neuen Namen ab.</description>
 <contactref element="C3" pad="2"/>
 <contactref element="U1" pad="2"/>
 <contactref element="R5" pad="1"/>
+<contactref element="C4" pad="-"/>
+<contactref element="IC1" pad="2"/>
+<contactref element="IC1" pad="2"/>
+<contactref element="C5" pad="-"/>
+<contactref element="C6" pad="2"/>
 <wire x1="41.402" y1="77.448" x2="53.848" y2="77.47" width="0" layer="19" extent="1-1"/>
 <wire x1="36.2966" y1="73.66" x2="41.402" y2="77.448" width="0" layer="19" extent="1-1"/>
 <wire x1="34.8234" y1="74.168" x2="36.2966" y2="73.66" width="0" layer="19" extent="1-1"/>
@@ -2189,6 +2240,10 @@ einem neuen Namen ab.</description>
 <wire x1="34.71" y1="80.772" x2="32.004" y2="75.096" width="0" layer="19" extent="1-1"/>
 <wire x1="6.008" y1="50.038" x2="32.004" y2="75.096" width="0" layer="19" extent="1-1"/>
 <wire x1="6.1214" y1="43.434" x2="6.008" y2="50.038" width="0" layer="19" extent="1-1"/>
+<wire x1="-8.15" y1="-2.54" x2="6.1214" y2="43.434" width="0" layer="19" extent="1-1"/>
+<wire x1="-7.112" y1="-11.9681" x2="-8.15" y2="-2.54" width="0" layer="19" extent="1-1"/>
+<wire x1="-15.66" y1="-16.764" x2="-7.112" y2="-11.9681" width="0" layer="19" extent="1-1"/>
+<wire x1="-16.786" y1="-9.906" x2="-15.66" y2="-16.764" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="SDA">
 <contactref element="U2" pad="6"/>
@@ -2231,6 +2286,9 @@ einem neuen Namen ab.</description>
 <contactref element="C2" pad="+"/>
 <contactref element="C3" pad="1"/>
 <contactref element="LED1" pad="A"/>
+<contactref element="IC1" pad="5"/>
+<contactref element="C5" pad="+"/>
+<contactref element="C6" pad="1"/>
 <wire x1="41.402" y1="81.048" x2="51.308" y2="82.55" width="0" layer="19" extent="1-1"/>
 <wire x1="36.41" y1="80.772" x2="41.402" y2="81.048" width="0" layer="19" extent="1-1"/>
 <wire x1="32.004" y1="81.014" x2="36.41" y2="80.772" width="0" layer="19" extent="1-1"/>
@@ -2242,6 +2300,9 @@ einem neuen Namen ab.</description>
 <wire x1="7.5946" y1="43.434" x2="7.708" y2="50.038" width="0" layer="19" extent="1-1"/>
 <wire x1="7.5946" y1="42.926" x2="7.5946" y2="43.434" width="0" layer="19" extent="1-1"/>
 <wire x1="7.962" y1="39.878" x2="7.5946" y2="42.926" width="0" layer="19" extent="1-1"/>
+<wire x1="-8.062" y1="-9.3679" x2="7.962" y2="39.878" width="0" layer="19" extent="1-1"/>
+<wire x1="-13.186" y1="-9.906" x2="-8.062" y2="-9.3679" width="0" layer="19" extent="1-1"/>
+<wire x1="-17.36" y1="-16.764" x2="-13.186" y2="-9.906" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="N$2">
 <contactref element="R5" pad="2"/>
@@ -2250,6 +2311,12 @@ einem neuen Namen ab.</description>
 </signal>
 <signal name="+5V">
 <contactref element="RPI" pad="2"/>
+<contactref element="C4" pad="+"/>
+<contactref element="IC1" pad="3"/>
+<contactref element="IC1" pad="1"/>
+<wire x1="-4.55" y1="-2.54" x2="53.848" y2="82.55" width="0" layer="19" extent="1-1"/>
+<wire x1="-6.162" y1="-11.9681" x2="-4.55" y2="-2.54" width="0" layer="19" extent="1-1"/>
+<wire x1="-8.062" y1="-11.9681" x2="-6.162" y2="-11.9681" width="0" layer="19" extent="1-1"/>
 </signal>
 </signals>
 <errors>
